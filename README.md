@@ -19,7 +19,8 @@ Slash Your Spending, Not Your Style - Unleash the Best Deals!!
 [![Github closed pull requests](https://img.shields.io/github/issues-pr-closed/SE23-Team44/slash)](https://github.com/SE23-Team44/slash/pulls?q=is%3Apr+is%3Aclosed)
 <a href="https://github.com/SE23-Team44/slash/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/SE23-Team44/slash"></a>
 <a href="https://github.com/SE23-Team44/slasg/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/SE23-Team44/slash"></a>
-<img alt="Discord Channel" src="https://img.shields.io/discord/1162231656980168876">
+![Discord](https://img.shields.io/discord/1162231656980168876)
+
 
 Slash is a tool that scrapes the most popular e-commerce websites to get the best deals on searched items across these websites. 
 - **Fast**: With slash, you can save over 50% of your time by comparing deals across websites within seconds
