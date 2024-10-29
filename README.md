@@ -133,20 +133,19 @@ Login securely with a password
 
 # Chat Channel
 
-<code><a href="https://discord.gg/duCqfCS6EA" target="_blank"><img height="100" width="250" src="https://user-images.githubusercontent.com/42767118/135394825-26dee6db-7a64-4e3f-902a-1e35abd4cf0c.png"></a></code>
+<code><a href="https://discord.gg/KFtvmngMMD" target="_blank"><img height="100" width="250" src="https://user-images.githubusercontent.com/42767118/135394825-26dee6db-7a64-4e3f-902a-1e35abd4cf0c.png"></a></code>
 
 
 :sparkles: Contributors
 ---
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/dhirajv2000"><img src="https://avatars.githubusercontent.com/u/54794049?s=64&v=4" width="75px;" alt=""/><br /><sub><b>Dhiraj Venugopal</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/Sharatn7"><img src="https://avatars.githubusercontent.com/u/56881419?s=64&v=4" width="75px;" alt=""/><br /><sub><b>Sharat Neppali</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/sathiya06"><img src="https://avatars.githubusercontent.com/u/64639742?v=4" width="75px;" alt=""/><br /><sub><b>Sathiya Narayanan Venkatesan</b></sub></a></td>
-    <td align="center"><a href="https://github.com/aadithya-naresh"><img src="https://avatars.githubusercontent.com/u/49028800?s=64&v=4" width="75px;" alt=""/><br /><sub><b>Aadithya Naresh</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/DarthAsh"><img src="https://avatars.githubusercontent.com/u/54763573?v=4" width="75px;" alt=""/><br /><sub><b>Ashwin Satpute</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/Atharva7007"><img src="https://avatars.githubusercontent.com/u/61797592?v=4" width="75px;" alt=""/><br /><sub><b>Atharva Pansare</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/ThErOCk07"><img src="https://avatars.githubusercontent.com/u/83000050?s=400&v=4" width="75px;" alt=""/><br /><sub><b>Soham Patil</b></sub></a></td>
 </tr>
 </table>
 
 :email: Support
 ---
-For any queries and help, please reach out to us at dhj165@hotmail.com, sarathn08@gmail.com.
+For any queries and help, please reach out to us at th3rockk511@gmail.com.

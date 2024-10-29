@@ -10,51 +10,133 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Raleway", sans-serif
+  font-family: "Raleway", sans-serif;
 }
 
 body,
 html {
+<<<<<<< HEAD
     height: 100%;
     line-height: 1.8;
+    background-color: black;
+=======
+  height: 100%;
+  line-height: 1.8;
+>>>>>>> main
 }
 
 .bgimg-1 {
-
-    background-size: cover;
-    background-image: url("https://shots.codepen.io/username/pen/NLLXrv-800.jpg?version=1537117490");
-    min-height: 135%;
+  background-size: cover;
+  background-image: url("https://shots.codepen.io/username/pen/NLLXrv-800.jpg?version=1537117490");
+  min-height: 135%;
 }
 
 .w3-bar .w3-button {
-    padding: 16px;
+  padding: 16px;
 }
 
 .popup {
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #f1f1f1;
-    padding: 20px;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f1f1f1;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
 }
 
 .popup-content {
-    text-align: center;
+  text-align: center;
 }
 
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
+  color: #aaa;
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
+<<<<<<< HEAD
     color: #000;
 }
+
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    flex-direction: column;
+    text-align: center;
+}
+
+.centered-container span,
+.centered-container p {
+    margin: 10px 0;
+    color: white;
+}
+
+.centered-container input,
+.centered-container button {
+    width: 100%; 
+    max-width: 300px; 
+    padding: 10px; 
+    margin: 10px 0; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+}
+
+.centered-container button {
+    background-color: rgba(0, 149, 246, 1); 
+    color: white;
+    cursor: pointer; 
+}
+
+.centered-container button:hover {
+    background-color: darkblue; 
+}
+
+.password-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 300px;
+}
+
+.password-container input {
+    width: 100%;
+    padding-right: 50px; /* Add space for the toggle button */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-weight: bold;
+    color: black !important; /* Set the color of the toggle text */
+}
+=======
+  color: #000;
+}
+.google-login-button {
+  background-color: #4285f4; /* Google Blue */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Padding for a larger button */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.google-login-button:hover {
+  background-color: #357ae8; /* Darker blue on hover */
+}
+>>>>>>> main

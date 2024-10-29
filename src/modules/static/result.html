@@ -58,7 +58,7 @@ See the LICENSE file in the project root for the full license information.
       </label>
     </div>
   </nav>
-
+  
   <div class="container">
     <div class="conten-title">
       <h2><img
@@ -74,6 +74,16 @@ See the LICENSE file in the project root for the full license information.
       </section>
     </div>
     <br><br><br><br> <br><br><br><br>
+  </div>
+  <div>
+    <a href="{{ url_for('export_csv', product_name=prod, sort=request.form.get('sort'),
+     currency=request.form.get('currency'), min_price=request.form.get('min_price'),
+      max_price=request.form.get('max_price'), min_rating=request.form.get('min_rating')) }}" 
+   style="position: fixed; right: 20px; top: 60px; z-index: 1000; background-color: #347e37;
+    border: none; color: white; padding: 15px 20px; text-align: center; text-decoration: none;
+     display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;">
+   Export to CSV
+</a>
   </div>
   <div class="container" id="abc">
     <div class="row gx-3 align-items-end">
@@ -91,13 +101,22 @@ See the LICENSE file in the project root for the full license information.
           </div>
           <div class="form-group">
             <label class="control-label" for="company"></label>
-            <select id="choice1" name="currency" class="form-control">
-              <option value="usd">USD</option>
-              <option value="inr">INR</option>
-              <option value="euro">EURO</option>
-              <option value="yuan">YUAN</option>
-              <option value="aud">AUD</option>
-              <option value="pound">POUND</option>
+            <select id="choice1" name="currency" class="form-control" onchange="changeCurrency()">
+              <option id="USD" value="USD">USD</option>
+              <option id="INR" value="INR">INR</option>
+              <option id="EUR" value="EUR">EUR</option>
+              <option id="CNY" value="CNY">CNY</option>
+              <option id="AUD" value="AUD">AUD</option>
+              <option id="GBP" value="GBP">GBP</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="control-label" for="company"></label>
+            <select id="website-choice" name="website" class="form-control">
+              <option value="all">all</option>
+              <option value="walmart">walmart</option>
+              <option value="bestbuy">bestbuy</option>
+              <option value="ebay">ebay</option>
             </select>
           </div>
           <div class="form-group">
@@ -117,7 +136,7 @@ See the LICENSE file in the project root for the full license information.
           </div>
           <div class="form-group">
             <label class="control-label" for="company"></label>
-            <input type="submit" style="border-radius: 7px; height: 34px;" class="button button1" value="Search" />
+            <input type="submit" style="border-radius: 7px; height: 34px;" class="button button1" value="Go" />
           </div>
         </form>
       </div>
@@ -285,9 +304,7 @@ See the LICENSE file in the project root for the full license information.
 
   </header>
 
-
-
-  <script type="text/javascript" src="{{ url_for('static', filename='grid.js') }}"></script>
+  <!-- <script type="text/javascript" src="{{ url_for('static', filename='grid.js') }}"></script> -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -376,6 +393,37 @@ See the LICENSE file in the project root for the full license information.
       }
     })
   </script>
+  <script>
+function changeCurrency() {
+    const selectedCurrency = document.getElementById('choice1').value;
+    
+    // Send an AJAX request to update the currency
+    fetch('/update_currency', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ currency: selectedCurrency }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Update the displayed prices
+        updatePrices(data.products);
+    });
+}
+
+function updatePrices(products) {
+    // Update the prices in the DOM
+    // This will depend on how you're displaying the products
+    // For example:
+    products.forEach(product => {
+        const priceElement = document.getElementById(`price-${product.id}`);
+        if (priceElement) {
+            priceElement.textContent = product.price;
+        }
+    });
+}
+</script>
 </body>
 
 </html>

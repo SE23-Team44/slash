@@ -20,17 +20,26 @@ See the LICENSE file in the project root for the full license information.
 
 <body>
 
-  <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
-    <div class="w3-display-left w3-text-white" style="padding:48px">
+  <header>
+    <div class="centered-container">
       <span class="w3-jumbo w3-hide-small">SLASH</span><br>
       <span class="w3-xxlarge w3-hide-large w3-hide-medium">Start something that matters</span><br>
       <span class="w3-large">"Elevating Your Shopping Experience, All you need is One Comparison."</span>
-      <p><a onclick="document.getElementById('id01').style.display='block'"
-          class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">
-          Log In</a></p>
-      <p><a onclick="document.getElementById('id02').style.display='block'"
-          class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">
-          Register</a></p>  
+      <form method="POST" action="/login">
+        <p><input type="text" name="username" placeholder="Username" class="w3-input w3-border w3-margin-top" required></p>
+        <p class="password-container">
+          <input type="password" name="password" placeholder="Password" class="w3-input w3-border w3-margin-top" required>
+          <span class="toggle-password" onclick="togglePassword()">Show</span>
+        </p>
+        <p><button type="submit" class="w3-input w3-border w3-margin-top">Log in</button></p>
+      </form>
+      <!-- Google Login Button -->
+      <div class="w3-section">
+        <a href="/login/google">
+            <button type="button" class="w3-input w3-border w3-margin-top">Login with Google</button>
+        </a>
+    </div>
+      <p>Don't have an account? <a onclick="document.getElementById('id02').style.display='block'" style="cursor: pointer; font-weight: bold;" class="w3-text-blue w3-hover-text-blue" >Sign up</a></p>
     </div>
 
     {% if invalid %}
@@ -61,7 +70,7 @@ See the LICENSE file in the project root for the full license information.
           <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="username"
             required>
           <label><b>Password</b></label>
-          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Password" name="password"
+          <input class="w3-input w3-border w3-margin-bottom" type="password" placeholder="Enter Password" name="password"
             required>
           <button class="w3-button w3-block w3-black w3-section w3-padding" type="submit">Login</button>
         </div>
@@ -84,7 +93,7 @@ See the LICENSE file in the project root for the full license information.
           <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="username"
             required>
           <label><b>Password</b></label>
-          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Password" name="password"
+          <input class="w3-input w3-border w3-margin-bottom" type="password" placeholder="Enter Password" name="password"
             required>
           <button class="w3-button w3-block w3-black w3-section w3-padding" type="submit">Register</button>
         </div>
@@ -93,6 +102,20 @@ See the LICENSE file in the project root for the full license information.
   </div>
 
   </div>
+
+  <script>
+    function togglePassword() {
+      var passwordInput = document.querySelector('.password-container input');
+      var toggleText = document.querySelector('.toggle-password');
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleText.textContent = 'Hide';
+      } else {
+        passwordInput.type = 'password';
+        toggleText.textContent = 'Show';
+      }
+    }
+  </script>
 </body>
 
 </html>
