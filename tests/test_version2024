@@ -1,0 +1,41 @@
+import pytest
+import sys
+import os
+import csv
+
+# Add the src/modules directory to the Python path for imports
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(_file_), '..', 'src', 'modules')))
+
+# Import the Flask app
+from slash.src.modules.app import app
+
+@pytest.fixture
+def client():
+    """Set up a test client for Flask app."""
+    app.config['TESTING'] = True
+    app.config['SECRET_KEY'] = 'test_secret_key'
+    with app.test_client() as client:
+        yield client
+
+
+
+def test_search_redirects_if_not_logged_in(client):
+    """Verify that accessing the search page without login redirects to the login page."""
+    response = client.get('/search', query_string={'product_name': 'laptop'})
+    assert response.status_code == 302
+    assert '/login' in response.headers['Location']
+def test_unauthenticated_access_redirects_to_login(client):
+    """Check that accessing the search page without being logged in redirects the user to the login page."""
+    response = client.get('/search', query_string={'product_name': 'smartphone'})
+    assert response.status_code == 302
+    assert '/login' in response.headers['Location']
+def test_search_access_for_anonymous_user(client):
+    """Confirm that an unauthenticated user is redirected to the login page when accessing the search page."""
+    response = client.get('/search', query_string={'product_name': 'headphones'})
+    assert response.status_code == 302
+    assert '/login' in response.headers['Location']
+def test_redirect_to_login_when_search_without_login(client):
+    """Test if the search page redirects to login for users who are not logged in."""
+    response = client.get('/search', query_string={'product_name': 'camera'})
+    assert response.status_code == 302
+    assert '/login' in response.headers['Location']
